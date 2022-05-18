@@ -14,19 +14,19 @@ const todoReducers = (state = initialData, action) => {
     
 
     case "Draglist":
-      const { i, e, p, dragValue } = action.payload;
-      e.dataTransfer.setData("p", p)
+      const { index, dragElement, dataTransfer, dragValue } = action.payload;
+      dragElement.dataTransfer.setData("dataTransfer", dataTransfer)
       if (dragValue === "drop") {
-        state.startedTodo.splice(i, 1) 
+        state.startedTodo.splice(index, 1) 
       } else {
-         state.completedTodo.splice(i, 1)
+         state.completedTodo.splice(index, 1)
       }
       return {
         ...state
       }
     case "Droplist":
-      const { ele, dropValue } = action.payload;
-      const id = ele.dataTransfer.getData("p")
+      const { dropElement, dropValue } = action.payload;
+      const id = dropElement.dataTransfer.getData("dataTransfer")
       if (dropValue === "drag")
         return {
           ...state,

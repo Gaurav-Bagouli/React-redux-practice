@@ -80,7 +80,7 @@ const TodoDND = () =>{
                 className="box"
                 color="secondary"
                 key={index}
-                onDragStart={(e) => dispatch(onDragStart(e, elements, index, "end"))}
+                onDragStart={(e) => dispatch(onDragStart(e, elements, index, "drag"))}
                 draggable={true}
               >
                 {elements}

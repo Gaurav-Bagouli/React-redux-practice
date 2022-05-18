@@ -7,24 +7,24 @@
     }
 }
 
-export  const onDragStart=(e,p,i,dragValue)=>{
+export  const onDragStart=(dragElement,dataTransfer,index,dragValue)=>{
     return {
         type:"Draglist",
         payload:{
-            e,
-            p,
-            i,
+            dragElement,
+            dataTransfer,
+            index,
             dragValue
         }
     }
 }
 
 
-export  const onDrop= (ele,dropValue) =>{
+export  const onDrop= (dropElement,dropValue) =>{
     return {
         type:"Droplist",
         payload:{
-            ele,
+            dropElement,
             dropValue
         }
     }
